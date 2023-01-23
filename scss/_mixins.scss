@@ -1,0 +1,15 @@
+$pantallasmedianas:768px;
+$pantallasgrandes:992px;
+
+@mixin pantallasmedianas {
+    @media(min-width:#{$pantallasmedianas}){
+        @content;
+    }
+}
+
+@mixin pantallasgrandes {
+    @media(min-width:#{$pantallasgrandes}){
+        @content;
+    }
+}
+

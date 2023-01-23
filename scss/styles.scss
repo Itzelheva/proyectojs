@@ -1,0 +1,878 @@
+@import "tipografias";
+@import "variables";
+@import "animaciones";
+@import "mixins";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E9ECF4;
+}
+
+.modo-claro{
+    background-color: #E9ECF4;
+}
+
+.modo-oscuro{
+    background-color: black;
+    color: whitesmoke;
+}
+
+// INICIA GRID DE INDEX
+.contenedor {
+    width: 100%;
+    margin: 10px auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas: "header header header"
+        "nav nav nav"
+        "main main main"
+        "aside aside aside"
+        "widget1 widget1 widget1"
+        "widget2 widget2 widget2"
+        "footer footer footer";
+
+        @include pantallasmedianas{
+            grid-template-areas: "header header header"
+            "nav nav nav"
+            "main main aside"
+            "widget1 widget1 widget1"
+            "widget2 widget2 widget2"
+            "footer footer footer";
+        }
+
+        @include pantallasgrandes{
+            grid-template-areas: "header header header"
+            "nav nav nav"
+            "main main widget1"
+            "widget2 widget2 aside"
+            "footer footer footer";
+        }
+}
+
+.contenedor div,
+.contenedor header,
+.contenedor nav,
+.contenedor aside,
+.contenedor footer,
+.contenedor main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor header {
+    grid-area: header;
+    background-color: map-get($colores,color-principal);
+    color: map-get($colores,color-titulos);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoheader {
+        max-width: 100px;
+        height: 6rem;
+        @extend .logo-animacion;
+    }
+}
+
+.contenedor nav {
+    grid-area: nav;
+    background-color: #ffc0cb;
+    color: black;
+
+    .menunav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menunav li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+
+        &:hover {
+            background-color: map-get($colores,color-hover);
+            font-size: x-large;
+        }
+    }
+
+}
+
+.contenedor main {
+    grid-area: main;
+    background-color: #92C8D6;
+    background-image: linear-gradient(90deg, #033D68, #92C8D6);
+
+    h1 {
+        font-family: $titulos-principales;
+       @extend .h1-animacion;
+    } 
+
+    .titulo {
+        font-family: $titulos-principales;
+    }
+
+    p {
+        font-family: $texto;
+    }
+
+}
+
+.contenedor aside {
+    grid-area: aside;
+    background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .blanco{
+        background-color: #fff;
+    }
+}
+
+div.widget1 {
+    grid-area: widget1;
+    background-image: linear-gradient(-180deg, #266BB4, #6C1694);
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    font-family: $titulos-principales;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .quote{
+        max-width: 20rem;
+    }
+}
+
+div.widget2 {
+    grid-area: widget2;
+    background-color: #daa520;
+    color: map-get($colores,color-titulos);
+    text-align: center;
+}
+
+.contenedor footer {
+    grid-area: footer;
+    background-color: map-get($colores,color-principal);
+    color: #033D68;
+    font-family: $titulos-principales;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logofooter {
+        width: 90px;
+        @extend .logo-animacion;
+    }
+}
+
+// FINALIZA GRID DE INDEX
+
+//INICIA GRID DE CIRUGÍA PEDIÁTRICA
+
+.contenedora {
+    width: 100%;
+    margin: 10px auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-rows: repeat(7 auto);
+    grid-template-areas: "header header header"
+    "nav nav nav"
+    "widget4 widget4 widget4"
+    "main main main"
+    "aside aside aside"
+"widget3 widget3 widget3"
+"footer footer footer";
+
+        @include pantallasmedianas{
+            grid-template-areas: "header header header"
+            "nav nav nav"
+            "widget4 widget4 widget4"
+            "main main main"
+            "aside widget3 widget3"
+            "footer footer footer";
+        }
+
+        @include pantallasgrandes{
+            grid-template-areas: "header header header"
+            "nav nav nav"
+            "main main main"
+            "aside widget3 widget3"
+            "widget4 widget4 widget4"
+            "footer footer footer";
+        }
+}
+
+.contenedora header,
+.contenedora nav,
+.contenedora main,
+.contenedora aside,
+.contenedora div,
+.contenedora footer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedora header {
+    grid-area: header;
+    background-color: map-get($colores,color-principal);
+    color: map-get($colores,color-titulos);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoheader {
+        max-width: 100px;
+        height: 6rem;
+        @extend .logo-animacion;
+    }
+}
+
+.contenedora nav {
+    grid-area: nav;
+    background-color: pink;
+    color: black;
+
+    .menunav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menunav li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+
+        &:hover {
+          background-color:map-get($colores,color-hover);
+            font-size: x-large;
+        }
+    }
+}
+
+.contenedora main {
+    grid-area: main;
+    background-color: #92C8D6;
+    background-image: linear-gradient(90deg, #f5f241, #92C8D6);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h5 {
+        font-family: $titulos-principales;
+    }
+}
+
+.contenedora aside {
+    grid-area: aside;
+    background-color: #ee82ee;
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    background-image: linear-gradient(-90deg, rgb(218, 38, 218), #ec71cd);
+
+    .aap {
+        font-family: $titulos-principales;
+        font-size: xx-large;
+        text-decoration: none;
+        color: white;
+    }
+}
+
+div.widget3 {
+    grid-area: widget3;
+    background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    .blanco{
+        background-color: #fff;
+    }
+}
+
+div.widget4 {
+    grid-area: widget4;
+    position: relative;
+    background: url(../images/banner.png) no-repeat center;
+    background-size: cover;
+    height: 200px;
+    overflow: hidden;
+
+    .banner{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+text-align: center;
+color:#033D68;
+font-family: "Oswald";
+font-weight: 700;
+text-transform: uppercase;
+    }
+}
+
+.contenedora footer {
+    grid-area: footer;
+    background-color: map-get($colores,color-principal);
+    color: #033D68;
+    font-family: $titulos-principales;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logofooter {
+        width: 90px;
+        @extend .logo-animacion;
+    }
+}
+
+//FINALIZA GRID DE CIRUGIA PEDIATRICA
+
+//INICIA GRID PEDIATRÍA
+
+.contenedorb {
+    width: 100%;
+    margin: 10px auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-rows: repeat(7 auto);
+    grid-template-areas: "header header header"
+        "nav nav nav"
+        "widget6 widget6 widget6"
+        "main main main"
+        "aside aside aside"
+        "widget5 widget5 widget5"
+        "footer footer footer";
+
+        @include pantallasmedianas{
+            grid-template-areas: "header header header"
+            "nav nav nav"
+            "widget6 widget6 widget6"
+            "main main aside"
+            "widget5 widget5 widget5"
+            "footer footer footer";
+        }
+
+        @include pantallasgrandes{
+            grid-template-areas: "header header header"
+            "nav nav nav"
+            "main main main"
+            "widget6 widget6 widget6"
+            "widget5 widget5 aside"
+            "footer footer footer";
+        }
+}
+
+.contenedorb header,
+.contenedorb nav,
+.contenedorb main,
+.contenedorb aside,
+.contenedorb div,
+.contenedorb footer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedorb header {
+    grid-area: header;
+    background-color: map-get($colores,color-principal);
+    color: map-get($colores,color-titulos);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoheader {
+        max-width: 100px;
+        height: 6rem;
+        @extend .logo-animacion,
+    }
+}
+
+.contenedorb nav {
+    grid-area: nav;
+    background-color: pink;
+    color: black;
+
+    .menunav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menunav li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+
+        &:hover {
+          background-color: map-get($colores,color-hover);
+            font-size: x-large;
+        }
+    }
+}
+
+.contenedorb main {
+    grid-area: main;
+    background-color: #92C8D6;
+    background-image: linear-gradient(90deg, #033D68, #92C8D6);
+
+    h2,
+    h3 {
+        font-family: $titulos-principales;
+    }
+}
+
+.contenedorb aside {
+    grid-area: aside;
+    background-color: violet;
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    background-image: linear-gradient(-90deg, rgb(218, 38, 218), #ec71cd);
+
+    .aap {
+        font-family: $titulos-principales;
+        font-size: xx-large;
+        text-decoration: none;
+        color: white;
+    }
+}
+
+div.widget5 {
+    grid-area: widget5;
+    background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    .blanco{
+        background-color: #fff;
+    }
+}
+
+div.widget6 {
+    grid-area: widget6;
+    position: relative;
+    background: url(../images/banner.png) no-repeat center;
+    background-size: cover;
+    height: 200px;
+    overflow: hidden;
+
+    .banner{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+text-align: center;
+color:#033D68;
+font-family: "Oswald";
+font-weight: 700;
+text-transform: uppercase;
+    }
+}
+
+.contenedorb footer {
+    grid-area: footer;
+    background-color: map-get($colores,color-principal);
+    color: #033D68;
+    font-family: $titulos-principales;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logofooter {
+        width: 90px;
+        @extend .logo-animacion;
+    }
+}
+
+//FINALIZA GRID DE PEDIATRÍA
+
+//INICIA GRID DE GALERÍA
+
+.contenedorc {
+    width: 100%;
+    margin: 10px auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-rows: repeat(7 auto);
+    grid-template-areas: "header header header"
+        "nav nav nav"
+        "main main main"
+        "widget8 widget8 widget8"
+        "aside aside aside"
+        "widget7 widget7 widget7"
+        "footer footer footer";
+
+        @include pantallasmedianas{
+            grid-template-areas: "header header header"
+            "nav nav nav"
+            "main main main"
+            "widget8 widget8 widget8"
+            "widget7 widget7 widget7"
+            "footer footer footer";
+        }
+
+        @include pantallasgrandes{
+            grid-template-areas: "header header header"
+            "nav nav nav"
+            "main main widget7"
+            "main main widget8"
+            "footer footer footer";
+        }
+}
+
+.contenedorc header,
+.contenedorc nav,
+.contenedorc main,
+.contenedorc div,
+.contenedorc footer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedorc header {
+    grid-area: header;
+    background-color: map-get($colores,color-principal);
+    color: map-get($colores,color-titulos);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoheader {
+        max-width: 100px;
+        height: 6rem;
+        @extend .logo-animacion;
+    }
+}
+
+.contenedorc nav {
+    grid-area: nav;
+    background-color: pink;
+    color: black;
+
+    .menunav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menunav li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+
+        &:hover {
+          background-color: map-get($colores,color-hover);
+            font-size: x-large;
+        }
+    }
+}
+
+.contenedorc main {
+    grid-area: main;
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #92C8D6;
+    background-image: linear-gradient(90deg, #f5f241, #92C8D6);
+
+    .tamañogaleria {
+        width: 20rem;
+        height: 20rem;
+    }
+}
+
+div.widget7 {
+    grid-area: widget7;
+    background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    .blanco{
+        background-color: #fff;
+    }
+}
+
+div.widget8 {
+    grid-area: widget8;
+    background-color: goldenrod;
+    color: map-get($colores,color-titulos);
+    text-align: center;
+}
+
+.contenedorc footer {
+    grid-area: footer;
+    background-color: map-get($colores,color-principal);
+    color: #033D68;
+    font-family: $titulos-principales;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logofooter {
+        width: 90px;
+        @extend .logo-animacion;
+    }
+}
+
+//FINALIZA GRID DE GALERIA
+
+//INICIA GRID DE CONTACTO
+
+.contenedord {
+    width: 100%;
+    margin: 10px auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-rows: repeat(6 auto);
+    grid-template-areas: "header header header"
+        "nav nav nav"
+        "widget10 widget10 widget10"
+        "main main main"
+        "aside aside widget9"
+        "aside aside aside"
+        "footer footer footer";
+
+        @include pantallasmedianas{
+           grid-area: "header header header"
+           "nav nav nav"
+           "widget9 widget9 widget9"
+           "main main main"
+           "widget10 widget10 widget10"
+           "aside aside aside"
+           "footer footer footer";
+        }
+
+        @include pantallasgrandes{
+            grid-area: "header header header"
+            "nav nav nav"
+            "widget10 widget10 widget10"
+            "main main main"
+            "widget9 widget9 widget9"
+            "aside aside aside"
+            "footer footer footer";
+        }
+}
+
+.contenedord header,
+.contenedord nav,
+.contenedord main,
+.contenedord aside,
+.contenedord div,
+.contenedord footer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedord header {
+    grid-area: header;
+    background-color: map-get($colores,color-principal);
+    color: map-get($colores,color-titulos);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoheader {
+        max-width: 100px;
+        height: 6rem;
+        @extend .logo-animacion;
+    }
+}
+
+.contenedord nav {
+    grid-area: nav;
+    background-color: pink;
+    color: black;
+
+    .menunav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    li {
+        font-size: larger;
+        list-style-type: none;
+        font-family: $titulos-principales;
+
+        &:hover {
+          background-color: map-get($colores,color-hover);
+            font-size: x-large;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+}
+
+.contenedord main {
+    grid-area: main;
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #92C8D6;
+}
+
+.contenedord aside {
+    grid-area: aside;
+    background-color: #ee82ee;
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+div.widget9 {
+    grid-area: widget9;
+    background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+    color: map-get($colores,color-titulos);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .blanco{
+        background-color: #fff;
+    }
+}
+
+div.widget10 {
+    grid-area: widget10;
+    position: relative;
+    background: url(../images/banner.png) no-repeat center;
+    background-size: cover;
+    height: 200px;
+    overflow: hidden;
+
+    .banner{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+text-align: center;
+color:#033D68;
+font-family: "Oswald";
+font-weight: 700;
+text-transform: uppercase;
+    }
+}
+
+.contenedord footer{
+    grid-area: footer;
+    background-color: map-get($colores,color-principal);
+    color: #033D68;
+    font-family: $titulos-principales;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logofooter {
+        width: 90px;
+        @extend .logo-animacion;
+    }
+}
+//FINALIZA GRID DE CONTACTO
+
+//INICIA GRID DE CONTACTO
+

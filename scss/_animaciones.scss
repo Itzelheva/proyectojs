@@ -1,0 +1,31 @@
+
+
+.logo-animacion {
+    animation: rebotar .6s alternate infinite;
+}
+
+@keyframes rebotar {
+    from {
+        transform: scaleX(1.25);
+    }
+    to {
+        transform: scaleX(1) translateY(-10px);
+    }
+}
+
+
+
+.h1-animacion {
+    animation-duration: 2s;
+        animation-name: aparecer;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

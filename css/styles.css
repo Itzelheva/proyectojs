@@ -1,0 +1,610 @@
+@charset "UTF-8";
+.logo-animacion, .contenedor header .logoheader, .contenedor footer .logofooter, .contenedora header .logoheader, .contenedora footer .logofooter, .contenedorb header .logoheader, .contenedorb footer .logofooter, .contenedorc header .logoheader, .contenedorc footer .logofooter, .contenedord header .logoheader, .contenedord footer .logofooter {
+  animation: rebotar .6s alternate infinite; }
+
+@keyframes rebotar {
+  from {
+    transform: scaleX(1.25); }
+  to {
+    transform: scaleX(1) translateY(-10px); } }
+
+.h1-animacion, .contenedor main h1 {
+  animation-duration: 2s;
+  animation-name: aparecer; }
+
+@keyframes aparecer {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #E9ECF4; }
+
+.contenedor {
+  width: 100%;
+  margin: 10px auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, auto);
+  grid-template-areas: "header header header" "nav nav nav" "main main main" "aside aside aside" "widget1 widget1 widget1" "widget2 widget2 widget2" "footer footer footer"; }
+  @media (min-width: 768px) {
+    .contenedor {
+      grid-template-areas: "header header header" "nav nav nav" "main main aside" "widget1 widget1 widget1" "widget2 widget2 widget2" "footer footer footer"; } }
+  @media (min-width: 992px) {
+    .contenedor {
+      grid-template-areas: "header header header" "nav nav nav" "main main widget1" "widget2 widget2 aside" "footer footer footer"; } }
+
+.contenedor div,
+.contenedor header,
+.contenedor nav,
+.contenedor aside,
+.contenedor footer,
+.contenedor main {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px; }
+
+.contenedor header {
+  grid-area: header;
+  background-color: #92C8D6;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedor header .logoheader {
+    max-width: 100px;
+    height: 6rem; }
+
+.contenedor nav {
+  grid-area: nav;
+  background-color: #ffc0cb;
+  color: black; }
+  .contenedor nav .menunav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; }
+  .contenedor nav .menunav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+  .contenedor nav a {
+    text-decoration: none; }
+  .contenedor nav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+    .contenedor nav li:hover {
+      background-color: #E9ECF4;
+      font-size: x-large; }
+
+.contenedor main {
+  grid-area: main;
+  background-color: #92C8D6;
+  background-image: linear-gradient(90deg, #033D68, #92C8D6); }
+  .contenedor main h1 {
+    font-family: "Oswald"; }
+  .contenedor main .titulo {
+    font-family: "Oswald"; }
+  .contenedor main p {
+    font-family: "Open Sans"; }
+
+.contenedor aside {
+  grid-area: aside;
+  background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; }
+  .contenedor aside .blanco {
+    background-color: #fff; }
+
+div.widget1 {
+  grid-area: widget1;
+  background-image: linear-gradient(-180deg, #266BB4, #6C1694);
+  color: #fff;
+  text-align: center;
+  font-family: "Oswald";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+  div.widget1 .quote {
+    max-width: 20rem; }
+
+div.widget2 {
+  grid-area: widget2;
+  background-color: #daa520;
+  color: #fff;
+  text-align: center; }
+
+.contenedor footer {
+  grid-area: footer;
+  background-color: #92C8D6;
+  color: #033D68;
+  font-family: "Oswald";
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedor footer .logofooter {
+    width: 90px; }
+
+.contenedora {
+  width: 100%;
+  margin: 10px auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3 1fr);
+  grid-template-rows: repeat(7 auto);
+  grid-template-areas: "header header header" "nav nav nav" "widget4 widget4 widget4" "main main main" "aside aside aside" "widget3 widget3 widget3" "footer footer footer"; }
+  @media (min-width: 768px) {
+    .contenedora {
+      grid-template-areas: "header header header" "nav nav nav" "widget4 widget4 widget4" "main main main" "aside widget3 widget3" "footer footer footer"; } }
+  @media (min-width: 992px) {
+    .contenedora {
+      grid-template-areas: "header header header" "nav nav nav" "main main main" "aside widget3 widget3" "widget4 widget4 widget4" "footer footer footer"; } }
+
+.contenedora header,
+.contenedora nav,
+.contenedora main,
+.contenedora aside,
+.contenedora div,
+.contenedora footer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px; }
+
+.contenedora header {
+  grid-area: header;
+  background-color: #92C8D6;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedora header .logoheader {
+    max-width: 100px;
+    height: 6rem; }
+
+.contenedora nav {
+  grid-area: nav;
+  background-color: pink;
+  color: black; }
+  .contenedora nav .menunav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; }
+  .contenedora nav .menunav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+  .contenedora nav a {
+    text-decoration: none; }
+  .contenedora nav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+    .contenedora nav li:hover {
+      background-color: #E9ECF4;
+      font-size: x-large; }
+
+.contenedora main {
+  grid-area: main;
+  background-color: #92C8D6;
+  background-image: linear-gradient(90deg, #f5f241, #92C8D6);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .contenedora main h5 {
+    font-family: "Oswald"; }
+
+.contenedora aside {
+  grid-area: aside;
+  background-color: #ee82ee;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  background-image: linear-gradient(-90deg, #da26da, #ec71cd); }
+  .contenedora aside .aap {
+    font-family: "Oswald";
+    font-size: xx-large;
+    text-decoration: none;
+    color: white; }
+
+div.widget3 {
+  grid-area: widget3;
+  background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around; }
+  div.widget3 .blanco {
+    background-color: #fff; }
+
+div.widget4 {
+  grid-area: widget4;
+  position: relative;
+  background: url(../images/banner.png) no-repeat center;
+  background-size: cover;
+  height: 200px;
+  overflow: hidden; }
+  div.widget4 .banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #033D68;
+    font-family: "Oswald";
+    font-weight: 700;
+    text-transform: uppercase; }
+
+.contenedora footer {
+  grid-area: footer;
+  background-color: #92C8D6;
+  color: #033D68;
+  font-family: "Oswald";
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedora footer .logofooter {
+    width: 90px; }
+
+.contenedorb {
+  width: 100%;
+  margin: 10px auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3 1fr);
+  grid-template-rows: repeat(7 auto);
+  grid-template-areas: "header header header" "nav nav nav" "widget6 widget6 widget6" "main main main" "aside aside aside" "widget5 widget5 widget5" "footer footer footer"; }
+  @media (min-width: 768px) {
+    .contenedorb {
+      grid-template-areas: "header header header" "nav nav nav" "widget6 widget6 widget6" "main main aside" "widget5 widget5 widget5" "footer footer footer"; } }
+  @media (min-width: 992px) {
+    .contenedorb {
+      grid-template-areas: "header header header" "nav nav nav" "main main main" "widget6 widget6 widget6" "widget5 widget5 aside" "footer footer footer"; } }
+
+.contenedorb header,
+.contenedorb nav,
+.contenedorb main,
+.contenedorb aside,
+.contenedorb div,
+.contenedorb footer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px; }
+
+.contenedorb header {
+  grid-area: header;
+  background-color: #92C8D6;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedorb header .logoheader {
+    max-width: 100px;
+    height: 6rem; }
+
+.contenedorb nav {
+  grid-area: nav;
+  background-color: pink;
+  color: black; }
+  .contenedorb nav .menunav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; }
+  .contenedorb nav .menunav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+  .contenedorb nav a {
+    text-decoration: none; }
+  .contenedorb nav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+    .contenedorb nav li:hover {
+      background-color: #E9ECF4;
+      font-size: x-large; }
+
+.contenedorb main {
+  grid-area: main;
+  background-color: #92C8D6;
+  background-image: linear-gradient(90deg, #033D68, #92C8D6); }
+  .contenedorb main h2,
+  .contenedorb main h3 {
+    font-family: "Oswald"; }
+
+.contenedorb aside {
+  grid-area: aside;
+  background-color: violet;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  background-image: linear-gradient(-90deg, #da26da, #ec71cd); }
+  .contenedorb aside .aap {
+    font-family: "Oswald";
+    font-size: xx-large;
+    text-decoration: none;
+    color: white; }
+
+div.widget5 {
+  grid-area: widget5;
+  background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around; }
+  div.widget5 .blanco {
+    background-color: #fff; }
+
+div.widget6 {
+  grid-area: widget6;
+  position: relative;
+  background: url(../images/banner.png) no-repeat center;
+  background-size: cover;
+  height: 200px;
+  overflow: hidden; }
+  div.widget6 .banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #033D68;
+    font-family: "Oswald";
+    font-weight: 700;
+    text-transform: uppercase; }
+
+.contenedorb footer {
+  grid-area: footer;
+  background-color: #92C8D6;
+  color: #033D68;
+  font-family: "Oswald";
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedorb footer .logofooter {
+    width: 90px; }
+
+.contenedorc {
+  width: 100%;
+  margin: 10px auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3 1fr);
+  grid-template-rows: repeat(7 auto);
+  grid-template-areas: "header header header" "nav nav nav" "main main main" "widget8 widget8 widget8" "aside aside aside" "widget7 widget7 widget7" "footer footer footer"; }
+  @media (min-width: 768px) {
+    .contenedorc {
+      grid-template-areas: "header header header" "nav nav nav" "main main main" "widget8 widget8 widget8" "widget7 widget7 widget7" "footer footer footer"; } }
+  @media (min-width: 992px) {
+    .contenedorc {
+      grid-template-areas: "header header header" "nav nav nav" "main main widget7" "main main widget8" "footer footer footer"; } }
+
+.contenedorc header,
+.contenedorc nav,
+.contenedorc main,
+.contenedorc div,
+.contenedorc footer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px; }
+
+.contenedorc header {
+  grid-area: header;
+  background-color: #92C8D6;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedorc header .logoheader {
+    max-width: 100px;
+    height: 6rem; }
+
+.contenedorc nav {
+  grid-area: nav;
+  background-color: pink;
+  color: black; }
+  .contenedorc nav .menunav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; }
+  .contenedorc nav .menunav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+  .contenedorc nav a {
+    text-decoration: none; }
+  .contenedorc nav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+    .contenedorc nav li:hover {
+      background-color: #E9ECF4;
+      font-size: x-large; }
+
+.contenedorc main {
+  grid-area: main;
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: center;
+  justify-content: space-around;
+  padding: 30px;
+  background-color: #92C8D6;
+  background-image: linear-gradient(90deg, #f5f241, #92C8D6); }
+  .contenedorc main .tamañogaleria {
+    width: 20rem;
+    height: 20rem; }
+
+div.widget7 {
+  grid-area: widget7;
+  background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around; }
+  div.widget7 .blanco {
+    background-color: #fff; }
+
+div.widget8 {
+  grid-area: widget8;
+  background-color: goldenrod;
+  color: #fff;
+  text-align: center; }
+
+.contenedorc footer {
+  grid-area: footer;
+  background-color: #92C8D6;
+  color: #033D68;
+  font-family: "Oswald";
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedorc footer .logofooter {
+    width: 90px; }
+
+.contenedord {
+  width: 100%;
+  margin: 10px auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3 1fr);
+  grid-template-rows: repeat(6 auto);
+  grid-template-areas: "header header header" "nav nav nav" "widget10 widget10 widget10" "main main main" "widget9 widget9 widget9" "aside aside aside" "footer footer footer"; }
+  @media (min-width: 768px) {
+    .contenedord {
+      grid-area: "header header header" "nav nav nav" "widget9 widget9 widget9" "main main main" "widget10 widget10 widget10" "aside aside aside" "footer footer footer"; } }
+  @media (min-width: 992px) {
+    .contenedord {
+      grid-area: "header header header" "nav nav nav" "widget10 widget10 widget10" "main main main" "widget9 widget9 widget9" "aside aside aside" "footer footer footer"; } }
+
+.contenedord header,
+.contenedord nav,
+.contenedord main,
+.contenedord aside,
+.contenedord div,
+.contenedord footer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px; }
+
+.contenedord header {
+  grid-area: header;
+  background-color: #92C8D6;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedord header .logoheader {
+    max-width: 100px;
+    height: 6rem; }
+
+.contenedord nav {
+  grid-area: nav;
+  background-color: pink;
+  color: black; }
+  .contenedord nav .menunav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; }
+  .contenedord nav li {
+    font-size: larger;
+    list-style-type: none;
+    font-family: "Oswald"; }
+    .contenedord nav li:hover {
+      background-color: #E9ECF4;
+      font-size: x-large; }
+  .contenedord nav a {
+    text-decoration: none; }
+
+.contenedord main {
+  grid-area: main;
+  display: flex;
+  flex-flow: row wrap;
+  justify-items: center;
+  justify-content: space-around;
+  padding: 30px;
+  background-color: #92C8D6; }
+
+.contenedord aside {
+  grid-area: aside;
+  background-color: #ee82ee;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px; }
+
+div.widget9 {
+  grid-area: widget9;
+  background-image: linear-gradient(-180deg, #ec71cd, #6C1694);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; }
+  div.widget9 .blanco {
+    background-color: #fff; }
+
+div.widget10 {
+  grid-area: widget10;
+  position: relative;
+  background: url(../images/banner.png) no-repeat center;
+  background-size: cover;
+  height: 200px;
+  overflow: hidden; }
+  div.widget10 .banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #033D68;
+    font-family: "Oswald";
+    font-weight: 700;
+    text-transform: uppercase; }
+
+.contenedord footer {
+  grid-area: footer;
+  background-color: #92C8D6;
+  color: #033D68;
+  font-family: "Oswald";
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contenedord footer .logofooter {
+    width: 90px; }
